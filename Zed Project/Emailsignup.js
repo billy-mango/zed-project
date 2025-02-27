@@ -8,13 +8,13 @@ document.getElementById('createbtn').addEventListener('click', function() {
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value, 
         password: document.getElementById('password').value, 
-        confirmpassword: document.getElementById('cpassword').value,
+        confirmPassword: document.getElementById('cpassword').value,
         checkbox: document.getElementById('checkbox').value 
     };
 
     //Error handling
 
-    if (!userData.firstname || !userData.lastname || !userData.username || !userData.email || !userData.password || !userData.confirmpassword) {
+    if (!userData.firstname || !userData.lastname || !userData.username || !userData.email || !userData.password || !userData.confirmPassword) {
         alert("Please fill in all required fields."); 
         return; // Ensures that the user fills in all required fields
     }

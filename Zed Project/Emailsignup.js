@@ -9,7 +9,7 @@ document.getElementById('createbtn').addEventListener('click', function() {
         phone: document.getElementById('phone').value, 
         password: document.getElementById('password').value, 
         confirmPassword: document.getElementById('cpassword').value,
-        checkbox: document.getElementById('checkbox').value 
+        checkbox: document.getElementById('checkbox').checked 
     };
 
     //Error handling

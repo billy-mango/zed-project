@@ -29,9 +29,9 @@ document.getElementById('createbtn').addEventListener('click', function() {
         return; //  Ensures password length is at least 8 characters
     }
 
-    if (checkbox.checked == false) {
+    if (!document.getElementById('checkbox').checked) {
         alert("Please agree to the terms and conditions.");
-        return; // Ensures that the user agrees to the terms and conditions
+        return;
     }
 
 

@@ -1,0 +1,68 @@
+.container{ /* container that separates the left and right content */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 25px 25px;
+
+}
+
+.zed-image-container{ /* image that is displayed on the left side of the container */
+
+    width: 504px;
+    height: 443px;
+
+}
+
+button{ /* button that is displayed on the right side of the container */
+
+    display: flex;
+    width: 370px;
+    padding: 10px 10px;
+    height: 60px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;            
+}
+
+a{ /* link that is displayed on the right side of the container */
+   
+    text-decoration: none;
+    color: rgb(37, 51, 133);
+    font-weight: bold;
+}
+
+h1{ /* title that is displayed on the right side of the container */
+
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(3, 37, 65);
+}
+
+.right-container{ /* container that separates the right content */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 20px;
+}
+
+.left-container{ /* container that separates the left content */
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    gap: 60px;
+}
+
+p{ 
+
+    font-weight: bold;
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input with image</title>
+    <style>
+        .input-with-image {
+          position: relative;
+          display: inline-block; /* Important for proper positioning */
+        }
+        
+        .input-with-image input[type="text"] {
+          padding-right: 30px; /* Adjust padding to accommodate the image */
+          width: 200px; /* Adjust width as needed */
+        }
+        
+        .input-with-image img {
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 20px; /* Adjust image size as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="input-with-image">
+        <input type="text" placeholder="Enter text">
+        <img src="Eye.png" alt="Eye" id="eye">
+    </div>
+    
+    <script src="">
+        document.getElementById('eye').addEventListener('click', function() {});
+    </script>
+    
+</body>
+</html>

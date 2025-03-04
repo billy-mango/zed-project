@@ -44,10 +44,10 @@ h1{ /* title that is displayed on the right side of the container */
 
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: column;
     gap: 20px;
-    width: 50%;
 }
 
 p{ 

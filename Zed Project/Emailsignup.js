@@ -40,20 +40,28 @@ document.getElementById('createbtn').addEventListener('click', function() {
 
     console.log(userData); //Display input collected in the console
 
-    setTimeout(function() {
-        window.location.href = "landingpage.html";
-    }, 5000); // Redirects user to landing page after 5 seconds
-
-    alert("Account created successfully!Redirecting to Sign In page in a few"); // Alerts user that account has been created successfully
+    function accountCreatedRedirect() {
+        alert("Account created successfully! Redirecting to Sign In page in a few");
+      
+        setTimeout(function() {
+          window.location.href = "landingpage.html";
+        }, 5000); // Redirects user to landing page after 5 seconds
+      }
+      
+      // Call the function to initiate the redirect
+      accountCreatedRedirect(); // Alerts user that account has been created successfully
 });
 
 //Create a new element
 
-const p = document.createElement('p');
-document.getElementById('userDetails').appendChild(p);
-
-//Display function on the div created
-
-document.getElementById('createbtn').addEventListener('click', function() {
-    p.innerHTML = `Welcome ${document.getElementById('uname').value}!`;
-});
+function displayWelcomeMessage() {
+    const p = document.createElement('p');
+    document.getElementById('userDetails').appendChild(p);
+  
+    document.getElementById('createbtn').addEventListener('click', function() {
+      p.innerHTML = `Welcome ${document.getElementById('uname').value}!`;
+    });
+  }
+  
+  // Call the function to set up the functionality
+  displayWelcomeMessage();

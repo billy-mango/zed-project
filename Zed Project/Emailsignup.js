@@ -19,7 +19,7 @@ document.getElementById('createbtn').addEventListener('click', function() {
         return; // Ensures that the user fills in all required fields
     }
 
-    if (userData.password !== userData.confirmpassword) {
+    if (userData.password !== userData.confirmPassword) {
         alert("Passwords do not match.");
         return; // Ensures that the user enters the same password in both fields
     }

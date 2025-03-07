@@ -1,5 +1,4 @@
 // Collection of user data
-
 document.getElementById('createbtn').addEventListener('click', function() { 
     const userData = { 
         firstname: document.getElementById('fname').value, 
@@ -12,8 +11,7 @@ document.getElementById('createbtn').addEventListener('click', function() {
         checkbox: document.getElementById('checkbox').checked 
     };
 
-    //Error handling
-
+    // Error handling
     if (!userData.firstname || !userData.lastname || !userData.username || !userData.email || !userData.password || !userData.confirmPassword) {
         alert("Please fill in all required fields."); 
         return; // Ensures that the user fills in all required fields
@@ -26,44 +24,38 @@ document.getElementById('createbtn').addEventListener('click', function() {
 
     if (userData.password.length < 8) {
         alert("Password must be at least 8 characters long.");
-        return; //  Ensures password length is at least 8 characters
+        return; // Ensures password length is at least 8 characters
     }
 
-    if (!document.getElementById('checkbox').checked) {
+    if (!userData.checkbox) {
         alert("Please agree to the terms and conditions.");
         return;
     }
 
-
     // Disables the button after the user has successfully created an account
     this.disabled = true;
 
-    console.log(userData); //Display input collected in the console
+    console.log(userData); // Display input collected in the console
 
+    // Call the function to display the welcome message
+    displayWelcomeMessage(userData.username, userData.email);
     
+    // Call the function to initiate the redirect
+    accountCreatedRedirect(); // Alerts user that account has been created successfully
 });
 
+// Function to redirect after account creation
 function accountCreatedRedirect() {
-    alert("Account created successfully! Redirecting to Sign In page in a few");
+    alert("Account created successfully! Redirecting to Sign In page in a few seconds.");
   
     setTimeout(function() {
-      window.location.href = "landingpage.html";
+        window.location.href = "landingpage.html";
     }, 5000); // Redirects user to landing page after 5 seconds
-  }
-  
-  // Call the function to initiate the redirect
-  accountCreatedRedirect(); // Alerts user that account has been created successfully
+}
 
-//Create a new element
-
-function displayWelcomeMessage() {
+// Create a new element to display the welcome message
+function displayWelcomeMessage(username, email) {
     const p = document.createElement('p');
+    p.innerHTML = `Welcome ${username}! Your email is ${email}.`;
     document.getElementById('userDetails').appendChild(p);
-  
-    document.getElementById('createbtn').addEventListener('click', function() {
-    p.innerHTML = `Welcome ${document.getElementById('uname').value}! Your email is ${document.getElementById('email').value} and your password is ${document.getElementById('password').value}.`;
-    });
-  }
-  
-  // Call the function to set up the functionality
-  displayWelcomeMessage();
+}

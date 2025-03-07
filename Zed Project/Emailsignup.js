@@ -61,7 +61,7 @@ function displayWelcomeMessage() {
     document.getElementById('userDetails').appendChild(p);
   
     document.getElementById('createbtn').addEventListener('click', function() {
-      p.innerHTML = `Welcome ${document.getElementById('uname').value}!`;
+    p.innerHTML = `Welcome ${document.getElementById('uname').value}! Your email is ${document.getElementById('email').value} and your password is ${document.getElementById('password').value}.`;
     });
   }
   

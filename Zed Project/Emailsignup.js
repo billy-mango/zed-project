@@ -11,7 +11,10 @@ document.getElementById('createbtn').addEventListener('click', function() {
         checkbox: document.getElementById('checkbox').checked 
     };
 
-    // Error handling
+    console.log(userData); // Display input collected in the console
+
+    // Error handling and validations
+
     if (!userData.firstname || !userData.lastname || !userData.username || !userData.email || !userData.password || !userData.confirmPassword) {
         alert("Please fill in all required fields."); 
         return; // Ensures that the user fills in all required fields
@@ -29,19 +32,12 @@ document.getElementById('createbtn').addEventListener('click', function() {
 
     if (!userData.checkbox) {
         alert("Please agree to the terms and conditions.");
-        return;
+        return; // Ensures that the user agrees to the terms and conditions
     }
 
-    // Disables the button after the user has successfully created an account
-    this.disabled = true;
+    this.disabled = true; // Disables the button after the user has successfully created an account
 
-    console.log(userData); // Display input collected in the console
-
-    // Call the function to display the welcome message
-    displayWelcomeMessage(userData.username, userData.email);
     
-    // Call the function to initiate the redirect
-    accountCreatedRedirect(); // Alerts user that account has been created successfully
 });
 
 // Function to redirect after account creation
@@ -53,9 +49,15 @@ function accountCreatedRedirect() {
     }, 5000); // Redirects user to landing page after 5 seconds
 }
 
+// Call the function to initiate the redirect
+accountCreatedRedirect(); // Alerts user that account has been created successfully
+
 // Create a new element to display the welcome message
-function displayWelcomeMessage(username, email) {
+function displayWelcomeMessage(firstname, username, email) {
     const p = document.createElement('p');
     p.innerHTML = `Welcome ${firstname}! Your username is ${username}! Your email is ${email}.`;
     document.getElementById('userDetails').appendChild(p);
 }
+
+// Call the function to display the welcome message
+displayWelcomeMessage(userData.username, userData.email);

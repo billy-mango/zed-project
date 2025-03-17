@@ -38,7 +38,7 @@ document.getElementById('createbtn').addEventListener('click', function() {
     this.disabled = true; // Disables the button after the user has successfully created an account
     
     // Call the function to display the welcome message
-     displayWelcomeMessage(userData.username, userData.email);
+     displayWelcomeMessage(userData.firstname, userData.username, userData.email);
     
     // Call the function to initiate the redirect
      accountCreatedRedirect(); // Alerts user that account has been created successfully

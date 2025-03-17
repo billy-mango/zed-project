@@ -56,6 +56,6 @@ function accountCreatedRedirect() {
 // Create a new element to display the welcome message
 function displayWelcomeMessage(username, email) {
     const p = document.createElement('p');
-    p.innerHTML = `Welcome ${username}! Your email is ${email}.`;
+    p.innerHTML = `Welcome ${firstname}! Your username is ${username}! Your email is ${email}.`;
     document.getElementById('userDetails').appendChild(p);
 }

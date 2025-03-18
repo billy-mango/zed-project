@@ -81,3 +81,32 @@ function showToast(message) {
         }, 500); // Wait for the fade-out transition to complete
     }, 3000);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('cpassword');
+
+    function togglePasswordVisibility(input) {
+        if (input.type === 'password') {
+            input.type = 'text';
+            input.classList.add('visible'); // Add 'visible' class
+        } else {
+            input.type = 'password';
+            input.classList.remove('visible'); // Remove 'visible' class
+        }
+    }
+
+    passwordInput.addEventListener('click', function(event) {
+        // Prevent click on input to trigger toggle when clicking on the icon
+        if (event.offsetX > passwordInput.clientWidth - 20) {
+            togglePasswordVisibility(passwordInput);
+        }
+    });
+
+    confirmPasswordInput.addEventListener('click', function(event) {
+        // Prevent click on input to trigger toggle when clicking on the icon
+        if (event.offsetX > confirmPasswordInput.clientWidth - 20) {
+            togglePasswordVisibility(confirmPasswordInput);
+        }
+    });
+});

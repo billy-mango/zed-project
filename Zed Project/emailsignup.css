@@ -20,9 +20,9 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: column;
+    /*align-items: column;*/
     flex-wrap: wrap;
-    width: fit-content;
+    width: 100%;
     gap: 10px;
 }
 
@@ -46,7 +46,7 @@ h1{ /* title that is displayed on the right side of the container */
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: column;
+    /*align-items: column;*/
     gap: 20px;
 }
 
@@ -62,14 +62,11 @@ button{
     border-radius: 5px;
 }
 
-input[type="text"]{
-    padding: 10px 10px;
-    width: 95%;
-}
-
-input[type="password"]{
-    padding: 10px 10px;
-    width: 95%;
+input[type="text"],
+input[type="password"] { /* Combined selector */
+  padding: 10px 10px;
+  width: 100%; /* Make inputs fill their container */
+  border: 1px solid #181616; /* Consistent border color */
 }
 
 .names-container{
@@ -108,3 +105,13 @@ input[type="password"]{
     right: 20px; 
     z-index: 1000;
 }
+
+#password,
+#cpassword {
+  padding-right: 30px; /* Adjust as needed */
+  background-image: url("view.png"); /* Replace with your image path */
+  background-repeat: no-repeat;
+  background-position: right 8px center; /* Adjust positioning */
+  background-size: 20px; /* Adjust size */
+}
+

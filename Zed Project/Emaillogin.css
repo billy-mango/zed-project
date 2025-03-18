@@ -59,6 +59,16 @@ button{
     padding: 10px 10px;
 }
 
+button:hover {
+    transform: translateY(-3px); /* Slightly move the button up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+button:active {
+      transform: translateY(1px); /* move down slightly when clicked */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* change shadow when clicked */
+  }
+
 input[type="email"],
 input[type="password"] { /* Combined selector */
   padding: 10px 10px;

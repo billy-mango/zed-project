@@ -101,3 +101,10 @@ input[type="password"]{
 .toast.fade-out {
     opacity: 0;
 }
+
+#toast-container {
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 1000;
+}

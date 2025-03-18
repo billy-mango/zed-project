@@ -16,22 +16,22 @@ document.getElementById('createbtn').addEventListener('click', function() {
     // Error handling and validations
 
     if (!userData.firstname || !userData.lastname || !userData.username || !userData.email || !userData.password || !userData.confirmPassword) {
-        alert("Please fill in all required fields."); 
+        showToast("Please fill in all required fields."); 
         return; // Ensures that the user fills in all required fields
     }
 
     if (userData.password !== userData.confirmPassword) {
-        alert("Passwords do not match.");
+        showToast("Passwords do not match.");
         return; // Ensures that the user enters the same password in both fields
     }
 
     if (userData.password.length < 8) {
-        alert("Password must be at least 8 characters long.");
+        showToast("Password must be at least 8 characters long.");
         return; // Ensures password length is at least 8 characters
     }
 
     if (!userData.checkbox) {
-        alert("Please agree to the terms and conditions.");
+        showToast("Please agree to the terms and conditions.");
         return; // Ensures that the user agrees to the terms and conditions
     }
 
@@ -48,7 +48,7 @@ document.getElementById('createbtn').addEventListener('click', function() {
 
 // Function to redirect after account creation
 function accountCreatedRedirect() {
-    alert("Account created successfully! Redirecting to Sign In page in a few seconds.");
+    showToast("Account created successfully! Redirecting to Sign In page in a few seconds.");
   
     setTimeout(function() {
         window.location.href = "landingpage.html";
@@ -63,3 +63,21 @@ function displayWelcomeMessage(firstname, username, email) {
     document.getElementById('userDetails').appendChild(p);
 }
 
+// Toast function to display messages
+
+function showToast(message) {
+    const toastContainer = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerText = message;
+
+    toastContainer.appendChild(toast);
+
+    // Automatically remove the toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.add('fade-out');
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 500); // Wait for the fade-out transition to complete
+    }, 3000);
+}

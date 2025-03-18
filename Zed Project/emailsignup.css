@@ -86,3 +86,18 @@ input[type="password"]{
     justify-content: center;
     align-items: center;
 }
+
+.toast { /* toast message that is displayed when the user signs up */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+}
+
+.toast.fade-out {
+    opacity: 0;
+}

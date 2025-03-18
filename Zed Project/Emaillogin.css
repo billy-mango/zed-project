@@ -20,8 +20,7 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: column;
-    width: fit-content;
+    width: 100%;
     gap: 10px;
 }
 
@@ -43,10 +42,9 @@ h1{ /* title that is displayed on the right side of the container */
 
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: column;
     gap: 20px;
-    width: 50%;
 }
 
 
@@ -61,14 +59,11 @@ button{
     padding: 10px 10px;
 }
 
-input[type="password"]{
-    padding: 10px 10px;
-    width: 95%;
-}
-
-input[type="email"]{
-    padding: 10px 10px;
-    width: 95%;
+input[type="email"],
+input[type="password"] { /* Combined selector */
+  padding: 10px 10px;
+  width: 100%; /* Make inputs fill their container */
+  border: 1px solid #181616; /* Consistent border color */
 }
 
 .left-container{

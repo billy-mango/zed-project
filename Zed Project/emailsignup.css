@@ -76,7 +76,11 @@ input[type="text"],
 input[type="password"] { /* Combined selector */
   padding: 10px 10px;
   width: 100%; /* Make inputs fill their container */
+  height: 20px;
   border: 1px solid #181616; /* Consistent border color */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 10px; /* Add space between inputs */
+  
 }
 
 .names-container{
